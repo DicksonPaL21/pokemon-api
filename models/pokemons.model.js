@@ -9,6 +9,18 @@ module.exports = (sequelize, DataTypes) => {
     poke_id: {
       type: DataTypes.INTEGER,
       allowNull: false
+    },
+    createdBy: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    updatedBy: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    deletedBy: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   });
 

@@ -27,7 +27,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    created_by: {
+    createdBy: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    updatedBy: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    deletedBy: {
       type: DataTypes.INTEGER,
       allowNull: false
     }

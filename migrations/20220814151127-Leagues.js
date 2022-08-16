@@ -33,14 +33,37 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      created_by: {
+      createdBy: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      created_at: {
+      createdAt: {
         allowNull: false,
         type: Sequelize.DATE
-      }
+      },
+      updatedBy: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      deletedBy: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+      },
+      deletedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+    }, {
+      modelName: 'Leagues',
+      tableName: 'leagues',
+      createdAt: 'createTimestamp',
+      updatedAt: 'updateTimestamp',
+      paranoid: true,
+      deletedAt: 'destroyTime'
     });
   },
   async down(queryInterface, Sequelize) {

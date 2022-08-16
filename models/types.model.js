@@ -5,6 +5,18 @@ module.exports = (sequelize, DataTypes) => {
     type: {
       type: DataTypes.STRING(11),
       allowNull: false
+    },
+    createdBy: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    updatedBy: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    deletedBy: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   });
 

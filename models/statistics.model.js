@@ -29,8 +29,25 @@ module.exports = (sequelize, DataTypes) => {
     speed: {
       type: DataTypes.INTEGER(6),
       allowNull: false
+    },
+    createdBy: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    updatedBy: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    deletedBy: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   });
+
+  Model.associate = models => {
+    Model.belongsTo(models.PokeLists, { foreignKey: "id", targetKey: "poke_id" });
+    // Model.hasMany(models.Portfolio) // if many portfolios per user
+  }
 
   sequelize.sync().then(() => {
     console.log('Statistics table created successfully!');

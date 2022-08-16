@@ -17,10 +17,37 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER(4)
       },
-      created_at: {
+      createdBy: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+      },
+      createdAt: {
         allowNull: false,
         type: Sequelize.DATE
-      }
+      },
+      updatedBy: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      deletedBy: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+      },
+      deletedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+    }, {
+      modelName: 'Trainers',
+      tableName: 'trainers',
+      createdAt: 'createTimestamp',
+      updatedAt: 'updateTimestamp',
+      paranoid: true,
+      deletedAt: 'destroyTime'
     });
   },
   async down(queryInterface, Sequelize) {

@@ -1,5 +1,9 @@
+'use strict'
+
 const pokemons = {
-  findAll: () => { },
+  findAll: () => {
+    res.json(['pokemons', '😀', '😳', '🙄']);
+  },
   findOne: () => { },
   update: () => { },
   create: () => { },

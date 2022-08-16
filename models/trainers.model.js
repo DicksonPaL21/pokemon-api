@@ -9,6 +9,18 @@ module.exports = (sequelize, DataTypes) => {
     type_id: {
       type: DataTypes.INTEGER(4),
       allowNull: false
+    },
+    createdBy: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    updatedBy: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    deletedBy: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   });
 

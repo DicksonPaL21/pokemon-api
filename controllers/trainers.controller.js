@@ -1,3 +1,5 @@
+'use strict'
+
 const trainers = {
   findAll: () => { },
   findOne: () => { },

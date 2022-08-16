@@ -1,3 +1,5 @@
+'use strict'
+
 const statistics = {
   findAll: () => { },
   findOne: () => { },

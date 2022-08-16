@@ -2,40 +2,20 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Statistics', {
+    await queryInterface.createTable('PokeLists', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      poke_id: {
+      name: {
         allowNull: false,
-        type: Sequelize.INTEGER(6)
+        type: Sequelize.STRING(32)
       },
-      health: {
+      type_ids: {
         allowNull: false,
-        type: Sequelize.INTEGER(6)
-      },
-      attack: {
-        allowNull: false,
-        type: Sequelize.INTEGER(6)
-      },
-      sp_attack: {
-        allowNull: false,
-        type: Sequelize.INTEGER(6)
-      },
-      defense: {
-        allowNull: false,
-        type: Sequelize.INTEGER(6)
-      },
-      sp_defense: {
-        allowNull: false,
-        type: Sequelize.INTEGER(6)
-      },
-      speed: {
-        allowNull: false,
-        type: Sequelize.INTEGER(6)
+        type: Sequelize.TEXT
       },
       createdBy: {
         allowNull: false,
@@ -62,8 +42,8 @@ module.exports = {
         type: Sequelize.DATE
       },
     }, {
-      modelName: 'Statistics',
-      tableName: 'statistics',
+      modelName: 'PokeLists',
+      tableName: 'pokelists',
       createdAt: 'createTimestamp',
       updatedAt: 'updateTimestamp',
       paranoid: true,
@@ -71,6 +51,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Statistics');
+    await queryInterface.dropTable('PokeLists');
   }
 };
